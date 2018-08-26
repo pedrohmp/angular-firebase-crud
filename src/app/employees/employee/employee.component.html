@@ -1,0 +1,38 @@
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="employeeService.selectedEmployee.$key">
+  <div class="form-group">
+    <label>Nome</label>
+    <input class="form-control" name="name" #name="ngModel" 
+    [(ngModel)]="employeeService.selectedEmployee.name" placeholder="Nome do funcionario" required>
+  </div>
+  <div class="form-group">
+    <label>Cargo</label>
+    <input class="form-control" name="position" #position="ngModel" 
+    [(ngModel)]="employeeService.selectedEmployee.position" placeholder="Digite o cargo do funcionario">
+  </div>
+  <div class="form-group">
+    <label>Cidade</label>
+    <input class="form-control" name="office" #office="ngModel" 
+    [(ngModel)]="employeeService.selectedEmployee.office" placeholder="Digite a cidade em que trabalha">
+  </div>
+  <div class="form-group">
+    <label>Salario</label>
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-dollar"></i>
+      </div>
+      <input class="form-control" name="salary" #salary="ngModel" 
+      [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="Digite seu salario">
+    </div>
+     </div>
+     <div class="form-group">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button class="btn btn-secondary" type="submit">
+            <i class="fa fa-floppy-o"></i>
+            Gravar</button>
+          <button class="btn btn-secondary" type="button" (click)="resetForm(employeeForm)">
+            <i class="fa fa-repeat"></i>
+            Reset</button>
+        </div>
+      </div>
+</form>
